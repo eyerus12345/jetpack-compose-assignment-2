@@ -1,6 +1,7 @@
 package com.example.todoapp.data.repository
 
 import com.example.todoapp.data.local.TodoDao
+
 import com.example.todoapp.data.local.TodoEntity
 
 import com.example.todoapp.data.remote.TodoApiService
@@ -21,7 +22,7 @@ class TodoRepository @Inject constructor(
         try {
             val todosDto = api.fetchTodos()
             val entities = todosDto.map { dto ->
-                TodoEntity(dto.id, dto.user_id, dto.title, dto.completed)
+                TodoEntity(dto.id, dto.userId, dto.title, dto.completed)
             }
             dao.insertTodos(entities)
         } catch (e: Exception) {

@@ -1,6 +1,5 @@
 package com.example.todoapp.data.local
 
-import android.util.EventLogTags.Description
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
